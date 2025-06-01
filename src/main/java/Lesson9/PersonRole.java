@@ -6,5 +6,7 @@ public enum PersonRole {
     DOCTOR,
     ENGINEER,
     ARTIST,
+    ARCHITECT,
+    DESIGNER,
     OTHER
 }

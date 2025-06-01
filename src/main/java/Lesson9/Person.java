@@ -1,6 +1,6 @@
 package Lesson9;
 
-public class Person implements Displayable {
+public abstract class Person implements Displayable {
     private String name;
     private int age;
     private PersonRole role;
@@ -15,8 +15,16 @@ public class Person implements Displayable {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getAge() {
         return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public PersonRole getRole() {
@@ -27,8 +35,19 @@ public class Person implements Displayable {
         this.role = role;
     }
 
+    public void changeProfession(PersonRole newRole) {
+        this.role = newRole;
+    }
+
+    public abstract String getGenderDescription();
+
     @Override
     public void displayInformation() {
-        System.out.println("Ім'я: " + name + ", Вік: " + age + ", Професія: " + role);
+        System.out.println("Ім'я: " + name + ", Вік: " + age + ", Професія: " + role + ", Стать: " + getGenderDescription());
+    }
+
+    public void displayInformation(String prefix) {
+        System.out.print(prefix + ": ");
+        displayInformation();
     }
 }
