@@ -11,7 +11,6 @@ public class Person implements Displayable {
         this.role = role;
     }
 
-    // Геттеры и сеттеры
     public String getName() {
         return name;
     }
@@ -28,7 +27,6 @@ public class Person implements Displayable {
         this.role = role;
     }
 
-    // Метод из интерфейса
     @Override
     public void displayInformation() {
         System.out.println("Ім'я: " + name + ", Вік: " + age + ", Професія: " + role);

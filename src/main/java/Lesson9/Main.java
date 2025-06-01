@@ -7,7 +7,7 @@ public class Main {
         Man bob = new Man("Bob", 35, PersonRole.DOCTOR);
 
         Woman alice = new Woman("Alice", 28, PersonRole.ARTIST);
-        alice.setRole(PersonRole.OTHER);  // Після оновлення професії
+        alice.setRole(PersonRole.OTHER);
 
         john.displayInformation();
         mary.displayInformation();
