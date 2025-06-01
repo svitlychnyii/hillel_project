@@ -1,17 +1,17 @@
 package Lesson9;
 
-public class Person {
-
+public class Person implements Displayable {
     private String name;
     private int age;
-    private String profession;
+    private PersonRole role;
 
-    public Person(String name, int age, String profession) {
+    public Person(String name, int age, PersonRole role) {
         this.name = name;
         this.age = age;
-        this.profession = profession;
+        this.role = role;
     }
 
+    // Геттеры и сеттеры
     public String getName() {
         return name;
     }
@@ -20,27 +20,17 @@ public class Person {
         return age;
     }
 
-    public String getProfession() {
-        return profession;
+    public PersonRole getRole() {
+        return role;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRole(PersonRole role) {
+        this.role = role;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setProfession(String profession) {
-        this.profession = profession;
-    }
-
-    public void printInfo() {
-        System.out.println("Ім'я: " + name + ", Вік: " + age + ", Професія: " + profession);
-    }
-
-    public void changeProfession(String newProfession) {
-        this.profession = newProfession;
+    // Метод из интерфейса
+    @Override
+    public void displayInformation() {
+        System.out.println("Ім'я: " + name + ", Вік: " + age + ", Професія: " + role);
     }
 }
