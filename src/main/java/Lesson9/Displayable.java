@@ -1,5 +1,8 @@
 package Lesson9;
 
-public interface Displayable {
+interface Displayable {
     void displayInformation();
+    default void displayInformation(String prefix) {
+        System.out.println(prefix);
+    }
 }

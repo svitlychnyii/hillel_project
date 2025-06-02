@@ -1,17 +1,23 @@
 package Lesson9;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
-        Person john = new Man("John", 30, PersonRole.ENGINEER);
-        Person mary = new Woman("Mary", 25, PersonRole.TEACHER);
-        Person bob = new Man("Bob", 35, PersonRole.DOCTOR);
+        try {
+            Person john = new Man("John", 30, PersonRole.ENGINEER);
+            Person mary = new Woman("Mary", 25, PersonRole.TEACHER);
+            Person bob = new Man("Bob", 35, PersonRole.DOCTOR);
+            Person alice = new Woman("Alice", 28, PersonRole.OTHER);
 
-        john.displayInformation();
-        mary.displayInformation();
-        bob.displayInformation();
+            john.displayInformation();
+            mary.displayInformation();
+            bob.displayInformation();
+            alice.displayInformation();
+            
+            // Person invalid = new Woman("", -5, PersonRole.OTHER); // неправильные данные
 
-        Person alice = new Woman("Alice", 28, PersonRole.ARCHITECT);
-        alice.changeProfession(PersonRole.DESIGNER);
-        alice.displayInformation();
+        } catch (InvalidPersonDataException e) {
+            System.out.println("Ошибка при создании пользователя: " + e.getMessage());
+        }
     }
 }
+

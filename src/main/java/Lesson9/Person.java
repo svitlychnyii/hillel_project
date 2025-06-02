@@ -1,53 +1,27 @@
 package Lesson9;
 
+import java.util.Objects;
+
 public abstract class Person implements Displayable {
-    private String name;
-    private int age;
-    private PersonRole role;
+    protected String name;
+    protected int age;
+    protected PersonRole role;
 
-    public Person(String name, int age, PersonRole role) {
+    public Person(String name, int age, PersonRole role) throws InvalidPersonDataException {
+        if (name == null || name.isEmpty()) {
+            throw new InvalidPersonDataException("Name cannot be null or empty");
+        }
+        if (age < 0) {
+            throw new InvalidPersonDataException("Age cannot be negative");
+        }
         this.name = name;
         this.age = age;
         this.role = role;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public PersonRole getRole() {
-        return role;
-    }
-
-    public void setRole(PersonRole role) {
-        this.role = role;
-    }
-
-    public void changeProfession(PersonRole newRole) {
-        this.role = newRole;
-    }
-
-    public abstract String getGenderDescription();
-
-    @Override
-    public void displayInformation() {
-        System.out.println("Ім'я: " + name + ", Вік: " + age + ", Професія: " + role + ", Стать: " + getGenderDescription());
-    }
+    public abstract void displayInformation();
 
     public void displayInformation(String prefix) {
-        System.out.print(prefix + ": ");
-        displayInformation();
+        System.out.println(prefix + ": " + name + ", Вік: " + age + ", Професія: " + role);
     }
 }
