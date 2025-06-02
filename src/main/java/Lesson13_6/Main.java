@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(3, 1, 2, 2, 1, 2, 3, 3, 3);
-        System.out.println("Most frequent element: " + findMostFrequent(numbers)); 
+        System.out.println("Most frequent element: " + findMostFrequent(numbers));
     }
 
     public static int findMostFrequent(List<Integer> list) {
