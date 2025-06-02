@@ -12,7 +12,7 @@ class Main {
             mary.displayInformation();
             bob.displayInformation();
             alice.displayInformation();
-            
+
             // Person invalid = new Woman("", -5, PersonRole.OTHER); // неправильные данные
 
         } catch (InvalidPersonDataException e) {
