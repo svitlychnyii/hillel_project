@@ -7,7 +7,7 @@ public class Main {
         System.out.println(buildResultString(new String[]{"a", "b", "a"}));
         System.out.println(buildResultString(new String[]{"a", "b", "a", "c", "a", "d", "a"}));
         System.out.println(buildResultString(new String[]{"a", "", "a"}));
-        System.out.println(buildResultString(new String[]{"x", "y", "z"}));
+        System.out.println(buildResultString(new String[]{"x", "y", "j"}));
     }
 
     public static String buildResultString(String[] strings) {
